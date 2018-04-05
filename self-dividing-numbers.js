@@ -6,7 +6,8 @@ and 128 % 8 == 0.
 
 Also, a self-dividing number is not allowed to contain the digit zero.
 
-Given a lower and upper number bound, output a list of every possible self dividing number, including the bounds if possible.
+Given a lower and upper number bound, output a list of every possible self
+dividing number, including the bounds if possible.
 
 Example 1:
 - Input: left = 1, right = 22
