@@ -21,6 +21,6 @@ The above arrows point to positions where the corresponding bits are different.
 *******************************************************************************/
 
 var hammingDistance = function(x, y) {
-    var count = (i=x^y) => (i | 0) ? ((i & 1) + count(i >>> 1)) : 0;
+    var count = (i=x^y) => i ? (i & 1) + count(i >>> 1) : 0;
     return count();
 }
