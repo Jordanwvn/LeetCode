@@ -1,4 +1,4 @@
-/******************************************************************************
+/* UNIQUE MORSE CODE WORDS *****************************************************
 Given a list of words, each word can be written as a concatenation of the Morse
 code of each letter. For example, "cab" can be written as "-.-.-....-", (which
 is the concatenation "-.-." + "-..." + ".-"). We'll call such a concatenation,

@@ -1,4 +1,4 @@
-/*******************************************************************************
+/* NUMBER OF LINES TO WRITE STRING *********************************************
 We are to write the letters of a given string S, from left to right into lines.
 Each line has maximum width 100 units, and if writing a letter would cause the
 width of the line to exceed 100 units, it is written on the next line. We are
