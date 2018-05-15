@@ -59,20 +59,22 @@ var updateBoard = function(board, click) {
 
     traversed[`${click[0]}, ${click[1]}`] = true;
 
-    var squareExists = (x, y) => board[x] !== undefined && board[x][y] !== undefined;
+    var squareExists = (x, y) =>
+        board[x] !== undefined && board[x][y] !== undefined;
 
-    var checkForMine = (x, y) => (squareExists(x, y) && board[x][y] === 'M') ? 1 : 0;
+    var checkForMine = (x, y) =>
+        (squareExists(x, y) && board[x][y] === 'M') ? 1 : 0;
 
-    var eachDirection = function (x, y, cb) {
-        cb (x    , y    );
-        cb (x - 1, y - 1);
-        cb (x - 1, y    );
-        cb (x - 1, y + 1);
-        cb (x    , y + 1);
-        cb (x + 1, y + 1);
-        cb (x + 1, y    );
-        cb (x + 1, y - 1);
-        cb (x    , y - 1);
+    var eachDirection = function (x, y, callback) {
+        callback (x    , y    );
+        callback (x - 1, y - 1);
+        callback (x - 1, y    );
+        callback (x - 1, y + 1);
+        callback (x    , y + 1);
+        callback (x + 1, y + 1);
+        callback (x + 1, y    );
+        callback (x + 1, y - 1);
+        callback (x    , y - 1);
     }
 
     var handleDirection = function (x, y) {
