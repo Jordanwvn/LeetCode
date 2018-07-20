@@ -33,7 +33,8 @@ public class Solution {
     public IList<string> FizzBuzz(int n) {
         string[] result = new string[n];
 
-        for (int i = 0, j = 1; i < n; i++, j++) {
+        for (int i = 0, j; i < n; i++) {
+            j = i + 1;
 
             if (j % 3 == 0) {
                 if (j % 5 == 0) {
