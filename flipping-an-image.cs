@@ -24,18 +24,20 @@ Then invert the image: [[1,1,0,0],[0,1,1,0],[0,0,0,1],[1,0,1,0]]
 public class Solution {
     public int[][] FlipAndInvertImage(int[][] A) {
 
-        int[][] newImage = new int[A.Length][];
-
-        for (int h = 0; h < A.Length; h++) {
-            newImage[h] = new int[A[0].Length];
-        }
+        int midpoint = (A[0].Length >> 1) + (A[0].Length % 2);
 
         for (int i = 0; i < A.Length; i++) {
-            for (int j = 0; j < A[0].Length; j++) {
-                newImage[i][(A[0].Length - 1) - j] = A[i][j] ^ 1;
+            for (int j = 0; j < midpoint; j++) {
+                if (j == A[0].Length - 1 - j) {
+                    A[i][j] ^= 1;
+                } else {
+                    int pixel = A[i][j];
+                    A[i][j] = A[i][A[0].Length - 1 - j] ^ 1;
+                    A[i][A[0].Length - 1 - j] = pixel ^ 1;
+                }
             }
         }
 
-        return newImage;
+        return A;
     }
 }
