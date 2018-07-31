@@ -25,13 +25,14 @@ public class Solution {
     public int[][] FlipAndInvertImage(int[][] A) {
 
         int midpoint = (A[0].Length >> 1) + (A[0].Length % 2);
+        int pixel = 0;
 
         for (int i = 0; i < A.Length; i++) {
             for (int j = 0; j < midpoint; j++) {
                 if (j == A[0].Length - 1 - j) {
                     A[i][j] ^= 1;
                 } else {
-                    int pixel = A[i][j];
+                    pixel = A[i][j];
                     A[i][j] = A[i][A[0].Length - 1 - j] ^ 1;
                     A[i][A[0].Length - 1 - j] = pixel ^ 1;
                 }
