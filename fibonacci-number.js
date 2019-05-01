@@ -6,4 +6,8 @@ F(N) = F(N - 1) + F(N - 2), for N > 1.
 Given N, calculate F(N).
 *******************************************************************************/
 
-var fib = (N, stored = [0, 1]) => N ? fib(--N, [stored[1], stored[0] + stored[1]]) : stored[0];
+var fib = function (N, stored = [0, 1]) {
+    return N 
+        ? fib(--N, [stored[1], stored[0] + stored[1]]) 
+        : stored[0];
+}
